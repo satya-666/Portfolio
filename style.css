@@ -15,6 +15,8 @@
     --section-bg: #f3f4f6;
     --card-bg: #ffffff;
     --transition: all 0.3s ease;
+    --button-border: rgba(37, 99, 235, 0.5);
+    --button-shadow: rgba(37, 99, 235, 0.2);
 }
 
 /* Dark Theme Variables */
@@ -26,6 +28,8 @@
     --background: #111827;
     --section-bg: #1f2937;
     --card-bg: #1e293b;
+    --button-border: rgba(96, 165, 250, 0.5);
+    --button-shadow: rgba(96, 165, 250, 0.2);
 }
 
 html {
@@ -331,6 +335,7 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    animation: float 6s ease-in-out infinite;
 }
 
 .profile-card img {
@@ -436,8 +441,20 @@ body {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .skill-category {
@@ -463,6 +480,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-size: 1.1rem;
+    animation: pulse 3s ease-in-out infinite;
 }
 
 .skill-item i {
@@ -511,10 +529,11 @@ body {
     scroll-snap-align: start;
     transform-style: preserve-3d;
     perspective: 1000px;
+    animation: float 6s ease-in-out infinite;
 }
 
 .project-card:hover {
-    transform: translateY(-10px) rotateX(5deg);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -770,11 +789,27 @@ body {
     align-items: center;
     text-decoration: none;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 .social-link:hover {
-    background: var(--secondary-color);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2));
+    transition: top 0.3s ease;
+}
+
+.social-link:hover::before {
+    top: 0;
 }
 
 .contact-form {
@@ -787,10 +822,11 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    border: 1px solid #e5e7eb;
+    border: 2px solid transparent;
     border-radius: 8px;
     font-size: 1rem;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    background: var(--section-bg);
 }
 
 .form-group textarea {
@@ -802,6 +838,8 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--button-shadow);
+    transform: translateY(-2px);
 }
 
 .submit-btn {
@@ -1000,7 +1038,7 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--button-border);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -1054,53 +1092,41 @@ body {
 /* Project Links */
 .project-links {
     display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    gap: 0.8rem;
+    margin-top: 1.25rem;
 }
 
 .project-btn {
-    flex: 1;
-    display: flex;
+    flex: 0 1 auto;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.2rem;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
     background: var(--card-bg);
     color: var(--text-color);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px;
+    font-size: 0.95rem;
     font-weight: 500;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1.5px solid var(--button-border);
     position: relative;
     overflow: hidden;
+    z-index: 1;
+    min-width: 120px;
+    max-width: fit-content;
 }
 
-.project-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-color);
-    transition: transform 0.5s ease;
-    z-index: -1;
-}
-
-.project-btn:hover::before {
-    transform: translateX(100%);
+.project-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
 }
 
 .project-btn:hover {
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-.project-btn i {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
 }
 
 .project-btn:hover i {
@@ -1109,10 +1135,124 @@ body {
 
 @media (max-width: 768px) {
     .project-links {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .project-btn {
-        width: 100%;
+        width: auto;
+        min-width: 110px;
     }
+}
+
+/* Enhanced Button Styles */
+.cta-primary, .cta-secondary, .submit-btn, .filter-btn, .project-btn {
+    position: relative;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--button-border);
+    box-shadow: 0 4px 15px var(--button-shadow);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-primary::before, .cta-secondary::before, .submit-btn::before, .filter-btn::before, .project-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: var(--primary-color);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.cta-primary:hover::before, .cta-secondary:hover::before, .submit-btn:hover::before, .filter-btn:hover::before, .project-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cta-primary:hover, .cta-secondary:hover, .submit-btn:hover, .filter-btn:hover, .project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--button-shadow);
+}
+
+.cta-primary:active, .cta-secondary:active, .submit-btn:active, .filter-btn:active, .project-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px var(--button-shadow);
+}
+
+/* Enhanced Animation Keyframes */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Apply Animations */
+.profile-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+.skill-item {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.project-card {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Enhanced Social Links Animation */
+.social-link {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2));
+    transition: top 0.3s ease;
+}
+
+.social-link:hover::before {
+    top: 0;
+}
+
+/* Enhanced Form Input Animations */
+.form-group input, .form-group textarea {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    background: var(--section-bg);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--button-shadow);
+    transform: translateY(-2px);
 }
