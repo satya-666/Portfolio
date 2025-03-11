@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">Portfolio</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="theme-toggle">
+            <button class="theme-btn">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </button>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="video-background">
+            <video autoplay muted loop playsinline poster="Images/poster.jpg">
+                <source src="Videos/compressed_videos/hero-background.mp4" type="video/mp4">
+                <source src="Videos/compressed_videos/hero-background.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Hi, I'm <span class="highlight">Satya Prakash</span></h1>
+            <p class="hero-subtitle">Frontend Developer</p>
+            <p class="hero-description">Crafting beautiful and functional web experiences with modern technologies</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-primary">View My Work</a>
+                <a href="#contact" class="cta-secondary">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left">
+            <div class="profile-card">
+                <img src="Images/WhatsApp Image 2025-03-11 at 14.54.50.jpeg" alt="Profile Image" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <p>I'm a passionate frontend developer with expertise in creating beautiful and functional web pages. With a strong foundation in modern web technologies, I love bringing ideas to life through code.</p>
+                <p>My journey in tech has equipped me with both technical expertise and problem-solving skills, allowing me to tackle complex challenges and deliver innovative solutions.</p>
+            </div>
+            <div class="about-stats" data-aos="fade-left">
+                <div class="stat-card">
+                    <h3>1+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-card">
+                    <h3>0+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category" data-aos="fade-up">
+                <h3>Frontend</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-react"></i>
+                        <span>Rt</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <h3>Backend</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-server"></i>
+                        <span>Express.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+        <div class="project-filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="app">App Development</button>
+            <button class="filter-btn" data-filter="design">UI/UX Design</button>
+        </div>
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-category="web" data-aos="fade-up">
+                <div class="project-image">
+                    <video class="project-video" loop muted playsinline>
+                        <source src="compressed_videos/project1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="project-overlay">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Website</h3>
+                    <p>A full-stack e-commerce platform with user authentication, product management, and payment integration.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://graceful-croquembouche-60826b.netlify.app/" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                        <a href="https://github.com/satya-666/Clothing-Website" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card" data-category="app" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <video class="project-video" loop muted playsinline>
+                        <source src="compressed_videos/project2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="project-overlay">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Fitness Tracking App</h3>
+                    <p>A mobile-first fitness tracking application with workout plans, progress tracking, and social features.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <!-- <span class="tech-tag">JavaScript</span> -->
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                        <a href="#" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <video class="project-video" loop muted playsinline>
+                        <source src="Videos/project3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="project-overlay">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Design System</h3>
+                    <p>A comprehensive design system with reusable components and documentation for portfolio websites.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Storybook</span>
+                        <span class="tech-tag">Styled Components</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                        <a href="#" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card" data-category="web" data-aos="fade-up">
+                <div class="project-image">
+                    <video class="project-video" loop muted playsinline>
+                        <source src="Videos/project4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="project-overlay">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Task Management Dashboard</h3>
+                    <p>A real-time task management system with team collaboration features and analytics.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">Socket.io</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                        <a href="#" class="project-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Project Card -->
+            <div class="project-card" data-category="your-category" data-aos="fade-up">
+                <div class="project-image">
+                    <video class="project-video" loop muted playsinline>
+                        <source src="Videos/project5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="project-overlay">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Your Project Name</h3>
+                    <p>Your project description goes here. Keep it concise but informative.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Technology 1</span>
+                        <span class="tech-tag">Technology 2</span>
+                        <span class="tech-tag">Technology 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="projects-pagination" data-aos="fade-up">
+            <button class="load-more-btn">Load More Projects</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>email@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 234 567 890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Your Location</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" data-aos="fade-left">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 satyaprakash. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
