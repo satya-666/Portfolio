@@ -506,6 +506,7 @@ body {
     margin-bottom: 3rem;
     position: relative;
     cursor: grab;
+    min-height: 250px; /* Ensure grid maintains height */
 }
 
 .projects-grid::-webkit-scrollbar {
@@ -515,6 +516,14 @@ body {
 .projects-grid.dragging {
     cursor: grabbing;
     scroll-behavior: auto;
+}
+
+.no-projects-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: auto;
+    padding: 2rem;
 }
 
 .project-card {

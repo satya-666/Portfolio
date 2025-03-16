@@ -334,6 +334,21 @@ function updateProjectsVisibility() {
     } else {
         loadMoreBtn.style.display = 'block';
     }
+
+    // Handle empty state
+    const projectsGrid = document.querySelector('.projects-grid');
+    const noProjectsMessage = document.querySelector('.no-projects-message');
+
+    if (visibleProjects.length === 0) {
+        if (!noProjectsMessage) {
+            const message = document.createElement('div');
+            message.className = 'no-projects-message';
+            message.textContent = 'No projects available in this category.';
+            projectsGrid.appendChild(message);
+        }
+    } else if (noProjectsMessage) {
+        noProjectsMessage.remove();
+    }
 }
 
 // Load more projects
