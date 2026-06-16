@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            height: 100vh;
+            background-color: tomato;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            height: 300px;
+            width: 300px;
+            border: 2px solid white;
+            border-radius: 50%;
+            animation-name: circles;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: blue;
+            animation-name: circles;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+            @keyframes circles{
+                0%{
+                    transform: translate(0,0);
+                }
+                25%{
+                    transform: translate(200px,0);
+                }
+                50%{
+                    transform: translate(200px,200px);
+                }
+                75%{
+                    transform: translate(0,200px);
+                }
+                100%{
+                    transform: translate(0,0);
+                }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

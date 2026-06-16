@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="./form.css" />
+  </head>
+  <body>
+    <form action="url" method="post">
+      <h1>Login Page</h1>
+      <div>
+        <label for="name">First Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+      </div>
+      <br />
+
+      <div>
+        <label for="namee">Last Name:</label>
+        <input type="text" id="namee" placeholder="Enter your last name"/>
+      </div>
+      <br />
+
+      <div>
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" placeholder="age"/>
+      </div>
+      <br />
+      <div>
+        <label for="contact">Cntact No:</label>
+        <input type="number" id="contact" placeholder="Mob no"/>
+      </div>
+      <br />
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email"/>
+      </div>
+      <br />
+
+      <div>
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" required placeholder="Must be 8 chracter password"/>
+      </div>
+      <br />
+
+      <div>
+        <label for="dob">D.O.B</label>
+        <input type="date" min="2000-01-30" max="2010-01-30" id="dob" />
+        <input type="time" />
+      </div>
+      <br />
+      <div>
+        <label for="">Male</label>
+        <input type="radio" name="ling" />
+        <label for="">Female</label>
+        <input type="radio" name="ling" />
+        <label for="">All the color of fu***ng rainbow</label>
+        <input type="radio" name="ling" />
+      </div>
+      <div>
+        <h3>Subject</h3>
+        <label for="">Web</label>
+        <input type="checkbox" />
+
+        <label for="">DSA</label>
+        <input type="checkbox" />
+
+        <label for="">DBMS</label>
+        <input type="checkbox" />
+
+        <label for="">HTMl</label>
+        <input type="checkbox" />
+      </div>
+      <br />
+
+      <div>
+        <label for="">Language:</label>
+        <select>
+          <option value="HI" selected>Hindi</option>
+          <option value="EN">English</option>
+          <option value="TA">Tamil</option>
+          <option value="MA">Marathi</option>
+          <option value="UR">Urdu</option>
+        </select>
+      </div>
+      <div>
+        <label for="">Color</label>
+        <input type="color" />
+      </div>
+      <br />
+      <div>
+        <label for="">UPLOAD File :</label>
+        <input type="file">
+      </div><br>
+      <div>
+        <!-- <input type="submit" value="submit"> -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </body>
+</html>

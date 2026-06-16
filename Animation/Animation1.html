@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            height: 100vh;
+            background-color: tomato;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            height: 300px;
+            width: 300px;
+            border: 2px solid white;
+            border-radius: 50%;
+            animation-name: orbit;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            animation-name: circles;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            border-radius: 50%;
+        }
+        @keyframes circles {
+            0%, 100%{
+                transform: translate(0,0);
+            }
+            25%{
+                transform: translate(200px,0);
+            }
+            50%{
+                transform: translate(200px,200px);
+            }
+            75%{
+                transform: translate(0,200px);
+            }
+            100%{
+                transform: translate(0,0);
+            }
+        }
+        @keyframes orbit {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
+1:20
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: chocolate;
+            transition: 4s;
+            transition-delay: 2s; */
+            transition-property: border-radius, transform;
+            transition-property: all;
+            transition-timing-function: linear;
+        }
+        .box:hover{
+            background-color: blue;
+            border-radius: 50%;
+            transform: rotate(180deg) scale(1.5);
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
