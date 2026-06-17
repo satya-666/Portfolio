@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const filter = btn.dataset.filter;
 
       projectCards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
+        const categories = (card.dataset.category || '').split(' ');
+        if (filter === 'all' || categories.includes(filter)) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
@@ -66,9 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Video hover play
-  document.querySelectorAll('.project-video').forEach(video => {
-    video.addEventListener('mouseenter', () => video.play());
-    video.addEventListener('mouseleave', () => {
+  document.querySelectorAll('.project-card').forEach(card => {
+    const video = card.querySelector('.project-video');
+    if (!video) return;
+    card.addEventListener('mouseenter', () => video.play());
+    card.addEventListener('mouseleave', () => {
       video.pause();
       video.currentTime = 0;
     });
